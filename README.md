@@ -50,8 +50,8 @@ This is a backend API built with Node.js, Express.js, and MongoDB that helps use
 - **Get dashboard data** - Endpoint: GET /admin/dashboard
 
 ## Testing Technologies used:         
-Backend: Node.js, Express.js, MongoDB, Mongoose         
-Authentication: JWT      
-Scheduling: Node-Schedule     
-Currency Conversion: Exchange Rate API     
-Testing: Jest/Postman   
+- **Backend**: Node.js, Express.js, MongoDB, Mongoose         
+- **Authentication**: JWT      
+- **Scheduling**: Node-Schedule     
+- **Currency Conversion**: Exchange Rate API     
+- **Testing**: Jest/Postman   
