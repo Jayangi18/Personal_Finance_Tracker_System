@@ -16,10 +16,10 @@ This is a backend API built with Node.js, Express.js, and MongoDB that helps use
 - **Role-Based Dashboard:** Personalized dashboard for Admins & Users.
 
 ## Setup Instructions
-**1. Clone the repository:**- git clone url   
-**2. Install dependencies:**- npm install   
-**3. Setup environmental variables:**- Create .env file and add mongodb connection   
-**4. Start server:**- npm start   
+-**1. Clone the repository:**- git clone url   
+-**2. Install dependencies:**- npm install   
+-**3. Setup environmental variables:**- Create .env file and add mongodb connection   
+-**4. Start server:**- npm start   
 
 ## API Documentation
 **1. User Roles and Authentication:**   
