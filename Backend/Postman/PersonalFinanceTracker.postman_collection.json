@@ -1,0 +1,821 @@
+{
+	"info": {
+		"_postman_id": "95b4db2b-daee-4055-a89d-c1d5c73e4317",
+		"name": "PersonalFinanceTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37895060"
+	},
+	"item": [
+		{
+			"name": "registerUser",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"userTest\",\r\n  \"email\": \"userTest@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"user\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"userTest@gmail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZjYzQ0NWM1ZDU1ZDQ5MWY2MDA2MzAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1MTk1ODY1OCwiZXhwIjoxNzUyNTYzNDU4fQ.HzM49eYzn9Jboj1QZZ9ovCUGV5q308M_SYHp5P2kkn8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/admin/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZjYzQ0NWM1ZDU1ZDQ5MWY2MDA2MzAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1MTk1ODY1OCwiZXhwIjoxNzUyNTYzNDU4fQ.HzM49eYzn9Jboj1QZZ9ovCUGV5q308M_SYHp5P2kkn8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/admin/users/67d189f6d1ad4d7b3182fc29",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"admin",
+						"users",
+						"67d189f6d1ad4d7b3182fc29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserDetails-Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q0NzJkOGMwMjY0ZmRkN2NlNmQzMTMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3Njg0OCwiZXhwIjoxNzQyNTgxNjQ4fQ.lsnvUjwZCrbBJCnq88Zu4VRsVqzWegav5_JX6Ch2Wrc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"admina\",\r\n    \"email\": \"admina@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/admin/users/67d472d8c0264fdd7ce6d313",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"admin",
+						"users",
+						"67d472d8c0264fdd7ce6d313"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserDetails-User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2Q0NzJkOGMwMjY0ZmRkN2NlNmQzMTMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3ODQzMSwiZXhwIjoxNzQyNTgzMjMxfQ.KLpbl1UMe5U7f1ODxtGiQiNgULGqNIKk2eKTNT12FsY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"userTestN\",\r\n    \"email\": \"userTestN@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/admin/profile/67d472d8c0264fdd7ce6d313",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"admin",
+						"profile",
+						"67d472d8c0264fdd7ce6d313"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/admin/check-user/test3@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"admin",
+						"check-user",
+						"test3@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTransaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZjYzQ0NWM1ZDU1ZDQ5MWY2MDA2MzAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1MTk1OTIzNCwiZXhwIjoxNzUyNTY0MDM0fQ.iT7zoPtqH7f4CRF0qVM9mkUkKSPUlad3Oq1Jk48rBmc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionType\": \"expense\",\r\n    \"category\": \"Books\",\r\n    \"amount\": 80000,\r\n    \"currency\": \"LKR\",\r\n    \"description\": \"schoolTextBooks\",\r\n    \"tags\": [\"write\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/transaction/addTransaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"transaction",
+						"addTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTransaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"isRecurring\": true, \r\n \"frequency\": \"monthly\",   \r\n \"endDate\": \"2025-04-31\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/transaction/updateTransaction/67d4eaa27daffc3fc57aa20b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"transaction",
+						"updateTransaction",
+						"67d4eaa27daffc3fc57aa20b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserTransactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/transaction/getUserTransactions?tags=dinner,food",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"transaction",
+						"getUserTransactions"
+					],
+					"query": [
+						{
+							"key": "tags",
+							"value": "dinner,food"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTransaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/transaction/deleteTransaction/67d46677f741ef1617c603ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"transaction",
+						"deleteTransaction",
+						"67d46677f741ef1617c603ff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setBudget",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODZjYzQ0NWM1ZDU1ZDQ5MWY2MDA2MzAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc1MTk1ODY1OCwiZXhwIjoxNzUyNTYzNDU4fQ.HzM49eYzn9Jboj1QZZ9ovCUGV5q308M_SYHp5P2kkn8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\": \"Books\",\r\n    \"amount\": 80000,\r\n    \"startDate\": \"2025-03-01\",\r\n    \"endDate\": \"2025-03-31\",\r\n    \"currency\": \"LKR\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/budget/setBudget",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"budget",
+						"setBudget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserBudgets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/budget/getUserBudgets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"budget",
+						"getUserBudgets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBudgetAmount",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 1120,\r\n    \"currency\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/budget/updateBudgetAmount/67d480accde42c0e4ec1c9a0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"budget",
+						"updateBudgetAmount",
+						"67d480accde42c0e4ec1c9a0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBudget",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTc4OTM1MiwiZXhwIjoxNzQyMzk0MTUyfQ.XtpAyRYbTJojBM0iFIQ600vi1hcXKkKf20A8nFoHGCE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/budget/deleteBudget/67d1c7f32ac24f2f7be0a0a7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"budget",
+						"deleteBudget",
+						"67d1c7f32ac24f2f7be0a0a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generateReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/report/financial?category=Clothes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"report",
+						"financial"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Clothes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkRecurringTransactions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/transaction/check-recurring",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"transaction",
+						"check-recurring"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detectUnusualSpending",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/transaction/check-unusual-spending",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"transaction",
+						"check-unusual-spending"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGoal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTk3MzA4OCwiZXhwIjoxNzQyNTc3ODg4fQ.n7UG9-eq8CoRhlyJrbQ1-vCW6zW4Us3ZEIgkaZIKSMQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Buy Car\",\r\n    \"targetAmount\": 8000,\r\n    \"deadline\": \"2025-05-31\",\r\n    \"currency\": \"USD\",\r\n    \"autoSavePercentage\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/goals/createGoal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"goals",
+						"createGoal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserGoals",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTg2NTE0MSwiZXhwIjoxNzQyNDY5OTQxfQ.436fXvZupaxsofTUypqe-iAX7Xob7_J6tb_iYVTnGHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/goals/getUserGoals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"goals",
+						"getUserGoals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateGoalProgress",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTg2NTE0MSwiZXhwIjoxNzQyNDY5OTQxfQ.436fXvZupaxsofTUypqe-iAX7Xob7_J6tb_iYVTnGHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 500\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/goals/updateGoalProgress/67d2c14282521a23e524d34a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"goals",
+						"updateGoalProgress",
+						"67d2c14282521a23e524d34a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteGoal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTg2NTE0MSwiZXhwIjoxNzQyNDY5OTQxfQ.436fXvZupaxsofTUypqe-iAX7Xob7_J6tb_iYVTnGHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5070/goals/deleteGoal/67d2c1dd82521a23e524d350",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"goals",
+						"deleteGoal",
+						"67d2c1dd82521a23e524d350"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDashboardData",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2QxOTgyZWUyMDkwMDAwZmE2ZTBmNDYiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0MTg2NTE0MSwiZXhwIjoxNzQyNDY5OTQxfQ.436fXvZupaxsofTUypqe-iAX7Xob7_J6tb_iYVTnGHg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5070/admin/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5070",
+					"path": [
+						"admin",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
